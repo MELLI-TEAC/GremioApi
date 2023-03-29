@@ -1,6 +1,6 @@
 ﻿namespace Domain.Shared.Primitives.ValueObject.Base;
 
-internal abstract class ValueObject : IEquatable<ValueObject>
+public abstract class ValueObject : IEquatable<ValueObject>
 {
     public static bool operator ==(ValueObject left, ValueObject right)
     {
@@ -11,7 +11,7 @@ internal abstract class ValueObject : IEquatable<ValueObject>
         return left.Equals(right);
     }
     public static bool operator !=(ValueObject left, ValueObject right) => !(left == right);
-    public bool Equals(ValueObject? other) => !(other is null) && GetAtomicValues().SequenceEqual(other.GetAtomicValues());
+    public bool Equals(ValueObject? other) => !(other is null) && GetAtomicValues().SequenceEqual(other.GetAtomicValues()); 
     public override bool Equals(object? obj)
     {
         if(obj is null) return false;
