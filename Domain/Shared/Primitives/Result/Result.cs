@@ -2,5 +2,6 @@
 
 public class Result
 {
-    public bool IsSuccess { get; set; }
+    public bool IsSuccess { get; init; }
+    public bool IsFailure => !IsSuccess;
 }
